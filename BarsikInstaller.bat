@@ -26,10 +26,14 @@ exit /b 0
 
 :: Проверка обновления
 :u
+:: Удаление кэша
+rmdir /s /q "%LOCALAPPDATA%\Microsoft\Windows\PowerShell\PowerShellGet\Cache"
+:: Проверка существования lastver.txt
 if not exist lastver.txt (
     echo ОШИБКА: файл lastver.txt не найден!
     exit /b 0
 )
+:: Если обнов нет - сообщение
 set /p lastver=<"lastver.txt"
 if "%lastver%" == "2026.1.1" (
     powershell -Command ^
