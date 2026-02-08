@@ -26,13 +26,6 @@ exit /b 0
 
 :: Проверка обновления
 :u
-:: Удаление кэша
-rmdir /s /q "%LOCALAPPDATA%\Microsoft\Windows\PowerShell\PowerShellGet\Cache"
-md "%LOCALAPPDATA%\Microsoft\Windows\PowerShell\PowerShellGet\Cache"
-for /f "delims=" %%i in ('dir /b /a "%TEMP%"') do (
-    del /f /q "%TEMP%\%%i" 2>nul
-    rmdir /s /q "%TEMP%\%%i" 2>nul
-) >nul
 :: Проверка существования lastver.txt
 if not exist lastver.txt (
     echo ОШИБКА: файл lastver.txt не найден!
