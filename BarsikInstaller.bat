@@ -35,3 +35,4 @@ if "%lastver%" == "2026.1.1" (
     powershell -Command ^
         "Write-Host 'INFO: ' -ForegroundColor Blue -NoNewline; Write-Host 'Обновлений не найдено!' -ForegroundColor Green"
 )
+del lastver.txt
