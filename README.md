@@ -1,0 +1,2 @@
+# BarsikInstaller
+BarsikInstaller - установщик программ.
